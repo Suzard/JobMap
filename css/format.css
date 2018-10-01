@@ -1,0 +1,169 @@
+body{
+
+    font:15x/1.5 Arial, Helvetica, sans-serif;
+    /*
+    both this and the above line work
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:15px;
+    line-height:1.5; 
+    */
+    padding:0;
+    margin:0;
+    background-color:white;
+}
+/*
+width dentotes how much of a margin there
+overflow hidden 
+*/
+.container{
+    width:80%;
+    margin:auto;
+    overflow:hidden;
+}
+/*
+white text black background
+for our header
+*/
+ul{
+    margin:0;
+    padding:0;
+}
+header{
+    background:dimgrey;
+    color:white;
+    padding-top:30px; 
+    min-height:70px;
+    border-bottom: red 3px solid;
+    
+}
+/*
+for our hyperlinks to other pages
+*/
+header a{
+    color:white;
+    text-decoration:none;
+    text-transform:uppercase;
+    font-size:16px;
+}
+/*for navigation bar 
+header*/
+
+/*for the links in the 
+header positioning
+*/
+header li{
+    float:left;
+    display:inline;
+    padding:  0 15px 0 15px;
+}
+/*branding is an id so you use the # sign*/
+header #branding{
+    float:left
+}
+/*provides less gap between h1 and nav tab*/
+header #branding h1{
+    margin:0;
+}
+/* moves the navigation header to the right*/
+header nav{
+    float:right;
+    margin-top:10px;
+}
+
+/* 
+changs the link color to match what the current pagae is on
+*/
+header .highlight, header .current a{
+    color: red;
+    font-weight:bold;
+}
+
+/*
+highlights the html when you hover over it
+*/
+header  a:hover{
+    color:black;
+    font-weight:bold;
+}
+
+/* 
+middle portion
+*/
+#advertisement{
+    min-height:400px;
+    background:url('../img/Organize1.jpg');
+    background-size:     cover;                      
+    background-repeat:   no-repeat;
+    background-position: center center; 
+    text-align:center;
+}
+
+/*
+both of these modifies the font size for our values
+*/
+#advertisement h1{
+    margin-top:95px;
+    font-size:55px;
+    margin-bottom:10px;
+}
+
+/*
+Takes care of formatting the font covering the advertisement
+*/
+#advertisement p{
+    margin-top:95px;
+    font-size:30px;
+    margin-bottom:10px;
+}
+
+#functions{
+    margin-top:15px 
+}
+
+/*
+Aligns the images in a nice way
+*/
+#functions .function{
+    float:left;
+    width:30%;
+    padding:10px;
+    text-align: center;
+}
+
+/*
+Sets the width so it doesn't change too much
+*/
+#functions .function img{
+    width:150px;
+}
+
+/*
+copyright formatting
+*/
+footer{
+    padding:15px;
+    margin-top:15px;
+    color:white;
+    background-color: red;
+    text-align:center;
+}
+
+/*
+shifts the text to the left so it's easier to read
+*/
+article#main-col{
+    float:left;
+    width:100%;
+
+}
+/*
+Shades in the values to make the text inside look nicer.
+*/
+ul#updates li{
+    list-style: none;
+    padding:15px;
+    border: grey solid1px;
+    margin-bottom:5px;
+    background: grey;
+    width:150%
+}
