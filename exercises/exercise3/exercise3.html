@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>exercise3</title>
+    <link rel="stylesheet" href="exercise3.css"><!--for css files-->
+</head>
+<body>
+    <script>
+        //function for converting dollar to yen
+        function dollarToYen(dollar){
+            var value = dollar;
+            var converted_value = value*113.71;
+            return converted_value
+        }
+
+        //bought more than one meal
+        var food = 125
+        var meals = 2
+        var total_food = food*meals
+        //printed console values and copied them to the table 
+        //to show variable manipulation
+        console.log('Food :'+dollarToYen(total_food) + " " + total_food);
+
+        var lodging = 300
+        console.log('Lodging :'+dollarToYen(lodging) + " " + lodging);
+
+        var transportation = 500
+        console.log('Transportation :'+dollarToYen(transportation) + " " + transportation);
+
+        var souvenirs = 50
+        console.log('Souvenirs :'+dollarToYen(souvenirs) + " " + souvenirs);
+
+        var total = food+lodging+transportation+souvenirs
+        console.log('Total :'+dollarToYen(total) + " " + total);
+
+        var balance = 1000-(food+lodging+transportation+souvenirs)
+        console.log('Balance :'+dollarToYen(balance) + " " + balance);
+    </script>
+    
+    <div class="background">
+        <!-- title -->
+        <h1>A week in Japan</h1>
+        
+        <table style="width:100%">
+                <tr>
+                    <th>Description</th>
+                    <th>¥Yen</th> 
+                    <th>$US</th>
+                </tr>
+                <tr>
+                    <td>Food</td>
+                    <td>28427</td> 
+                    <td>125</td>
+                </tr>
+                <tr>
+                    <td>Lodging</td>
+                    <td>34113</td> 
+                    <td>300</td>
+                </tr>
+                <tr>
+                    <td>Transportation</td>
+                    <td>56855</td> 
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>Souvenirs</td>
+                    <td>5685</td> 
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td>110867</td> 
+                    <td>975</td>
+                </tr>
+                <tr>
+                    <td>Balance</td>
+                    <td>2842</td> 
+                    <td>25</td>
+                </tr>
+        </table>
+    </div>
+
+          
+</body>
+</html>
