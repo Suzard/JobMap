@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>exercise3</title>
+    <link rel="stylesheet" href="exercise5.css"><!--for css files-->
+</head>
+<body>
+    <script>
+        function Movie(genre, name, rating, price){
+            this.genre = genre;
+            this.name = name;
+            this.rating = rating;
+            this.price = price;
+            this.show = function(){
+                
+                document.write("<div class='movie'>")
+                document.write("Title: " + this.name + "<br>");
+                document.write("Genre: " + this.genre + "<br>");
+                document.write("Rating: " + this.rating + "<br>");
+                document.write("Price: "+ this.price + "<br>");
+                document.write("<br>")
+                document.write("<div>")
+            } 
+        }
+    </script>
+
+
+<section id="advertisement">
+        <div class="container">
+            <h1>The best superhero movies in the business</h1>
+            <script>
+                var movie1 = new Movie("Superhero/Action", "The Dark Knight", "9.0/10", "$10.00")
+                movie1.show();
+                var movie2 = new Movie("Superhero/Action", "Batman Returns", "7.0/10", "$30.00")
+                movie2.show();
+            </script>
+        </div>
+</section>
+    
+          
+</body>
+</html>

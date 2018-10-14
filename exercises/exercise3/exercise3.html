@@ -9,12 +9,7 @@
 </head>
 <body>
     <script>
-        //function for converting dollar to yen
-        function dollarToYen(dollar){
-            var value = dollar;
-            var converted_value = value*113.71;
-            return converted_value
-        }
+        // $1 is 113.71 yen so I directly converted it through console.
 
         //bought more than one meal
         var food = 125
@@ -22,22 +17,23 @@
         var total_food = food*meals
         //printed console values and copied them to the table 
         //to show variable manipulation
-        console.log('Food :'+dollarToYen(total_food) + " " + total_food);
+        
+        console.log('Food :'+113.71*total_food + " " + total_food);
 
         var lodging = 300
-        console.log('Lodging :'+dollarToYen(lodging) + " " + lodging);
+        console.log('Lodging :'+113.71*lodging + " " + lodging);
 
         var transportation = 500
-        console.log('Transportation :'+dollarToYen(transportation) + " " + transportation);
+        console.log('Transportation :'+113.71*transportation + " " + transportation);
 
         var souvenirs = 50
-        console.log('Souvenirs :'+dollarToYen(souvenirs) + " " + souvenirs);
+        console.log('Souvenirs :'+113.71*souvenirs + " " + souvenirs);
 
         var total = food+lodging+transportation+souvenirs
-        console.log('Total :'+dollarToYen(total) + " " + total);
+        console.log('Total :'+113.71*total + " " + total);
 
         var balance = 1000-(food+lodging+transportation+souvenirs)
-        console.log('Balance :'+dollarToYen(balance) + " " + balance);
+        console.log('Balance :'+113.71*balance + " " + balance);
     </script>
     
     <div class="background">
