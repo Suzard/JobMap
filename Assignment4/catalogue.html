@@ -1,0 +1,107 @@
+<!DOCTYPE html> <!--Defines document type and html version-->
+<html lang="en"> <!--Contains the entire html document-->
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--scales your website-->
+    <meta name="description" content="Record and apply to jobs. All in one place">
+    <meta name="keywords" content="job, career, interface, apply">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JobMap | Product Information</title><!--Usually contains the header i.e. the name that shows up on the top of the tab-->
+    <link rel="stylesheet" href="./css/format.css"><!--for css files-->
+</head><!--Keeps other html tags-->
+<body>
+
+    <header>
+        <!--id is for something that is unique ex: showcase area vs class used everywhere-->
+        <div class="container">  <!--useful for adding padding to a header-->
+            <div id = "branding">
+                <h1>JobMap</h1>
+            </div>
+            <!--helps us navigate the website-->
+            <nav>
+                <ul>
+                    <li><a href= "index.html">Homepage</a></li>
+                    <li><a href= "faqs.html">FAQs</a></li>
+                    <li><a href= "updates.html">What's New?</a></li>
+                    <li><a href= "about.html">About Us</a></li>
+                    <li><a href= "service.html">Customer Service</a></li>
+                    <li><a href= "product_information.html">Product Information</a></li>
+                    <li class="current"><a href= "catalogue.html">Catalogue</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id ="functions">
+        <div class="container">
+            <article id="main-cols">
+                
+                <h1 class="page-title">Catalogue</h1>
+                <script>
+                function Product(plan, discount, message, id, eligibility){
+                    this.plan = plan;
+                    this.discount = discount;
+                    this.message = message;
+                    this.id = id;
+                    this.eligibility = eligibility;
+                }
+                function printArray(arr){
+                    document.write("<br>")
+                    for (var value in arr){
+                        for (var property in arr[value]){
+                        document.write("<td>");
+                        document.write(arr[value][property]);
+                        document.write("</td>");
+                        }
+                            
+                    }
+                }
+                var product1 = new Product("Monthly Plan", "5% off", "Enjoy our services every month", "1", "Individual, Team, Enterprise");
+                var category1 = [];
+                category1.push(product1);
+                
+                
+
+                var product2 = new Product("Yearly Plan", "10% off", "Enjoy our services every year", "2", "Individual, Team, Enterprise");
+                var category2 = []
+                category2.push(product2);
+
+                var product3 = new Product("Lifetime Plan", "20% off", "Enjoy our services for your entire life", "3", "Individual, Team");
+                var category3 = []
+
+                category3.push(product3);
+                var total_array = [];
+                total_array.push(category3);
+                total_array.push(category2);
+                total_array.push(category1);
+                document.write("<h2>Number of products: "+total_array.length+"<h2>");
+                document.write("<a href= 'product_information.html'>Product Information</a>");
+                document.write("<table>")
+                document.write("<th>Type</th>");
+                document.write("<th>Discount</th>");
+                document.write("<th>Description</th>");
+                document.write("<th>Product ID</th>");
+                document.write("<th>Availability</th>");
+                document.write("<tr>");
+                printArray(total_array.pop());
+                document.write("</tr>");
+                document.write("<tr>");
+                printArray(total_array.pop());
+                document.write("</tr>");
+                document.write("<tr>");
+                printArray(total_array.pop());
+                document.write("</tr>");
+                
+                document.write("</table>");
+                </script>
+            <article>
+        </div>
+    </section>
+
+        </div>
+    </section>
+    <footer>
+        <p>JobMap, Copyright &copy; 2018</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,57 @@
+/*
+width dentotes how much of a margin there
+overflow hidden 
+*/
+/* .container{
+    width:80%;
+    margin:auto;
+    overflow:hidden;
+} */
+body{
+    background-color: blue;    
+    background:url('dims.jpg') ;
+    background-size: cover;  
+    background-size: 100% 100%; 
+}
+h1{
+    font-size: 40px;
+    font-style: italic;
+}
+h1:hover{
+    color: black;
+}
+#bg{
+    position: absolute;  /*makes image stretch to full screen*/
+    top: 0; 
+    left: 0; 
+    /* Preserve aspect ratio */
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1; /*makes text able to take priority over image*/
+}
+#advertisement{
+    
+    background-size: 100%;     
+    height: 800px;                
+
+    text-align:center;
+    color: red;
+}
+.movie:hover{
+    color: red;
+}
+.movie{
+    color:green;
+    font-size: 30px;
+    width: 100%;
+    left: 25%;
+    outline-style: solid;
+    outline-color: brown;
+
+}
+.movie img{
+    max-width: 300px;
+    max-height: 300px;
+    outline-style: solid;
+    outline-color: yellow;
+}

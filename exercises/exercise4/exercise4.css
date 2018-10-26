@@ -1,0 +1,53 @@
+/*
+width dentotes how much of a margin there
+overflow hidden 
+*/
+/* .container{
+    width:80%;
+    margin:auto;
+    overflow:hidden;
+} */
+h1{
+    top:40px;
+    font-size: 40px;
+    font-style: italic;
+    color: blue;
+}
+#advertisement{
+           
+       
+
+    text-align:center;
+    
+}
+
+#bg{
+    position: absolute;  /*makes image stretch to full screen*/
+    top: 0; 
+    left: 0; 
+      
+    /* Preserve aspect ratio */
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1; /*makes text able to take priority over image*/
+}
+.result:hover{
+    color: yellow;
+    outline-style: solid;
+    outline-color: red;
+}
+.result{
+    background:url('Paint-Buckets-1.jpg') no-repeat;
+    background-size: cover;   
+    /* needed to get image to fit to div */
+    background-size: 100% 100%; 
+    color:gold;
+    font-size: 50px;
+    position: relative;
+    width: 700px;
+    height: 200px;
+    left: 30%;
+   
+    
+    
+}

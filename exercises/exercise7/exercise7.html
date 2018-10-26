@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>exercise7</title>
+    <link rel="stylesheet" href="exercise7.css"><!--for css files-->
+</head>
+<body>
+    <script>
+        alert("IMBD is overrated. Visit my site instead!");
+        function Movie(genre, name, rating, price,url){
+            this.genre = genre;
+            this.name = name;
+            this.rating = rating;
+            this.price = price;
+            this.show = function(){
+                document.write("<td>");
+                document.write("<div class='movie'>");
+                document.write("<img src='"+url+"'>");
+                document.write("<br>");
+                document.write("Title: " + this.name + "<br>");
+                document.write("Genre: " + this.genre + "<br>");
+                document.write("Rating: " + this.rating + "<br>");
+                document.write("Price: "+ this.price + "<br>");
+                document.write("<br>");
+                document.write("</div>");
+                document.write("<br>");
+                document.write("</td>");
+            } 
+        }
+        function printArray(arr){
+            for (var movie in arr){
+                    arr[movie].show();
+            }
+        }
+        var comedy1 = new Movie("Comedy", "Crazy Rich Asians", "7.5/10", "$12.00", "Rich.jpg")
+        var comedy2 = new Movie("Comedy", "Superbad", "7.6/10", "$18.00", "superbad.jpg")
+        var comedy3 = new Movie("Comedy", "Deadpool 2", "7.9/10", "$20.00", "deadpool.jpg")
+        var hero1 = new Movie("Superhero/Action", "The Dark Knight", "9.0/10", "$10.00", "Batman.jpeg")
+        var hero2 = new Movie("Superhero/Action", "Batman Returns", "7.0/10", "$30.00", "Batman2.jpg")
+        var hero3 = new Movie("Superhero/Action", "The Dark Knight Rises", "8.4/10", "$11.00", "Batman3.jpg")
+        var drama1 = new Movie("Drama", "A Star Is Born", "8.4/10", "$16.00", "star.jpg")
+        var drama2 = new Movie("Drama", "Moonlight", "8.7/10", "$21.00", "moonlight.jpg")
+        var drama3 = new Movie("Drama", "96", "9.3/10", "$22.00", "96.jpg")
+        var total_array = []
+        var row1 = [];
+        row1.push(comedy1);
+        row1.push(hero1);
+        row1.push(drama1);
+        var row2 = [];
+        row2.push(comedy2);
+        row2.push(hero2);
+        row2.push(drama2);
+        var row3 = [];
+        row3.push(comedy3);
+        row3.push(hero3);
+        row3.push(drama3);
+        total_array.push(row1);
+        total_array.push(row2);
+        total_array.push(row3);
+        document.write("<h1>Movies Inventory</h1>")
+        document.write("<h2>Number of movies in the inventory "+total_array.length+"<h2>");
+        document.write("<table style='width:100%'>")
+        document.write("<th>Comedy</th>");
+        document.write("<th>Superhero</th>");
+        document.write("<th>Drama</th>");
+        document.write("<tr>");
+        printArray(total_array.pop());
+        document.write("</tr>");
+        document.write("<tr>");
+        printArray(total_array.pop());
+        document.write("</tr>");
+        document.write("<tr>");
+        printArray(total_array.pop());
+        document.write("</tr>");
+        document.write("</table>");
+
+    </script>
+
+
+</body>
+</html>

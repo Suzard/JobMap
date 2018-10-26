@@ -1,0 +1,139 @@
+<!DOCTYPE html> <!--Defines document type and html version-->
+<html lang="en"> <!--Contains the entire html document-->
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--scales your website-->
+    <meta name="description" content="Record and apply to jobs. All in one place">
+    <meta name="keywords" content="job, career, interface, apply">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JobMap | Product Information</title><!--Usually contains the header i.e. the name that shows up on the top of the tab-->
+    <link rel="stylesheet" href="./css/format.css"><!--for css files-->
+</head><!--Keeps other html tags-->
+<body>
+    <script>
+    function function1(){
+        this.image = "./img/free.png";
+        this.description = "<h1>Free users: $0 a month</h1>\
+        <li> 1 resume check a month limit </li> \
+        <li> 10 resume storage limit </li> \
+        <li>Unlimited organization time</li>";
+        
+        this.show = function(){
+            document.write("<ul id = 'perks'>");
+            document.write("<img src = " + this.image + "><br>");
+            document.write(this.description);   
+            document.write("</ul>");
+        }
+    }
+    function function2(){
+        this.image = "./img/dancing.gif";
+        this.description = "<h1>Single user: $5 a month</h1>\
+        <li>Unlimited resume checks</li> \
+        <li>Unlimited resume storage </li> \
+        <li>One person only</li>";
+        
+        this.show = function(){
+            document.write("<ul id = 'perks'>");
+            document.write("<img src = " + this.image + "><br>");
+            document.write(this.description);   
+            document.write("</ul>");
+        }
+    
+    }
+
+    function function3(){
+        this.image = "./img/team.gif";
+        this.description = "<h1>Team: $10 a month</h1>\
+        <li>Unlimited resume checks</li> \
+        <li>Unlimited resume storage </li> \
+        <li>Unlimited members</li>\
+        <li>Admin Tools</li>";
+        
+        this.show = function(){
+            document.write("<ul id = 'perks'>");
+            document.write("<img src = " + this.image + "><br>");
+            document.write(this.description);   
+            document.write("</ul>");
+        }
+    
+    }
+    function function4(){
+        this.image = "./img/company.gif";
+        this.description = "<h1>Enterprise: $16 a month</h1>\
+        <li>Please contact customer support for more details</li> \
+        <li>Same perks as team otherwise</li>";
+        
+        this.show = function(){
+            document.write("<ul id = 'perks'>");
+            document.write("<img src = " + this.image + "><br>");
+            document.write(this.description);   
+            document.write("</ul>");
+        }
+    
+    }
+    </script>
+    <header>
+        <!--id is for something that is unique ex: showcase area vs class used everywhere-->
+        <div class="container">  <!--useful for adding padding to a header-->
+            <div id = "branding">
+                <h1>JobMap</h1>
+            </div>
+            <!--helps us navigate the website-->
+            <nav>
+                <ul>
+                    <li><a href= "index.html">Homepage</a></li>
+                    <li><a href= "faqs.html">FAQs</a></li>
+                    <li><a href= "updates.html">What's New?</a></li>
+                    <li><a href= "about.html">About Us</a></li>
+                    <li><a href= "service.html">Customer Service</a></li>
+                    <li class="current"><a href= "product_information.html">Product Information</a></li>
+                    <li><a href= "catalogue.html">Catalogue</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id ="functions">
+        <div class="container">
+            <article id="main-col">
+                <h1 class="page-title">Product Information</h1>
+                <script>
+                    function selectProduct(){
+                        var first_name = prompt("Enter your first name!","");
+                        var last_name = prompt("Enter your last name!","");
+                        alert("Welcome " + first_name + " " + last_name + "! \nPlease enjoy your stay.");
+                        var input = prompt(first_name + " " + last_name + ", please enter either item1, item2, item3 or 1,2,3.\nOrdered from lowest to highest price.", "ex: item1 = 1")
+                        var product1 = new function1();
+                        var product2= new function2();
+                        if (input == "item1" || input == 1){
+                            product1.show();
+                        }
+                        else if (input == "item2" || input == 2){
+                            product2.show();
+                        }
+                        else if (input == "item3" || input == 3){
+                            var product3 = new function3();
+                            var product4= new function4();
+                            document.write("<div class= 'products'>");
+                            product3.show();
+                            document.write("<br>")
+                            product4.show();
+                            document.write("</div>")
+                        }
+                        else{
+                            document.write("Please refresh the page and try again. Your input wasn't from [input1,input2, input3] or [1,2,3]")
+                        }
+                    }
+                    selectProduct()
+                </script>
+            <article>
+        </div>
+    </section>
+
+        </div>
+    </section>
+    <footer>
+        <p>JobMap, Copyright &copy; 2018</p>
+    </footer>
+</body>
+</html>

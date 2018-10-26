@@ -11,6 +11,15 @@ body{
     margin:0;
     background-color:white;
 }
+h1{
+    font-size: 50px;
+    text-align: center;
+    color: red;
+}
+h2{
+    font-size: 30px;
+    text-align: center;
+}
 /*
 width denotes how much of a margin there
 overflow hidden 
@@ -156,6 +165,13 @@ article#main-col{
     width:100%;
 
 }
+article#main-cols{
+    float:left;
+    width:100%;
+    background:url('../img/money.gif') no-repeat;
+
+}
+
 /*
 Shades in the values to make the text inside look nicer.
 */
@@ -166,4 +182,56 @@ ul#updates li{
     margin-bottom:5px;
     background: grey;
     width:150%
+    
 }
+
+ul#perks li{
+    list-style: none;
+    padding:15px;
+    border: silver solid1px;
+    margin-bottom:5px;
+    background: silver;
+    width:60%;
+    text-align: center;
+}
+
+.products{
+    display: flex;
+    flex: 50%;
+}
+ul#perks h1{
+    color:red;
+    font-size: 200%;
+}
+img{
+    max-height:400px;
+    max-width:400px;
+    min-height:300px;
+    min-width:300px;
+    
+}
+
+/*Assignment 4*/
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    height: 80%;
+
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color:green;
+}
+
+tr:nth-child(odd) {
+    background-color:blue;
+}
+
+

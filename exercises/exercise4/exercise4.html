@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>exercise4</title>
+    <link rel="stylesheet" href="exercise4.css"><!--for css files-->
+</head>
+<body>
+
+
+
+<section id="advertisement">
+        <div class="container">
+            
+            <img src= "money.gif" id ="bg">
+            <h1>Buckets of paint cost calculator</h1>
+            <script>
+                var bucket_number = prompt("Enter the number of buckets you want","");
+                var bucket_cost = prompt("Enter the cost of one bucket","");
+                function Bucket_Cost(number_buckets, cost){
+                    document.write("Total cost: $" + number_buckets*cost +"<br>");    
+                } 
+                document.write("<div class='result'>")
+                document.write("Number of buckets: " + bucket_number +" buckets<br>");
+                document.write("Cost of one bucket: $" + bucket_cost +"<br>");
+                Bucket_Cost(bucket_number,bucket_cost);
+                document.write("</div>")
+                
+            </script>
+        </div>
+</section>
+    
+          
+</body>
+</html>
