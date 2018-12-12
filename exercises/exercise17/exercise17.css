@@ -1,0 +1,23 @@
+table.center {
+    margin-left:auto; 
+    margin-right:auto;
+  }
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    text-align: center;
+    width: 200px;
+    color: red;
+}
+input{
+    float:left;
+}
+tr:nth-child(even) {
+    background-color:yellow;
+}
+
+tr:nth-child(odd) {
+    background-color:black;
+}

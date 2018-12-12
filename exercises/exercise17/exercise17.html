@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>exercise17</title>
+    <link rel="stylesheet" href="exercise17.css"><!--for css files-->
+</head>
+<body style= "background-color: purple">
+    <div style="text-align:center;">
+        <h1>Please select the features for your window</h1>
+    </div>
+    <table class ="center">
+        <tr>
+            <td>URL</td>
+            <td>
+            <form style = "text-align:center" action="/action_page.php">
+                <input id = "inputurl" type="text" name="fname"><br>
+            </form>
+            </td>
+        </tr>
+        <tr>
+                <td>Toolbar</td>
+                <td>
+                <input type="checkbox" id="toolbar">
+                </td>
+        </tr>
+        <tr>
+                <td>Location</td>
+                <td>
+                <input type="checkbox" id="location">
+                </td>
+        </tr>
+        <tr>
+                <td>Menubar</td>
+                <td>
+                <input type="checkbox" id="menubar">
+                </td>
+        </tr>
+        <tr>
+                <td>Scrollbars</td>
+                <td>
+                <input type="checkbox" id="scrollbars">
+                </td>
+        </tr>
+        <tr>
+                <td>Resizable</td>
+                <td>
+                <input type ="checkbox" id="resizable">
+                </td>
+        </tr>      
+        <tr>
+                <td>Width</td>
+                <td>
+                <form style = "text-align:center" action="/action_page.php">
+                    <input id = "inputwidth" type="text" name="fname"><br>
+                </form>
+                </td>
+        </tr>  
+        <tr>
+                <td>Height</td>
+                <td>
+                <form style = "text-align:center" action="/action_page.php">
+                    <input id = "inputheight" type="text" name="fname"><br>
+                </form>
+                </td>
+        </tr>
+        <tr>
+                <td><button onclick="createWindow()">Submit</button></td>
+                <td><button onclick="clearParam()">Clear</button></td>
+        </tr>
+    </table>
+    <script>
+        function createWindow(){
+            var url =  document.getElementById("inputurl").value
+            var width = document.getElementById("inputwidth").value 
+            var height = document.getElementById("inputheight").value
+            var toolbar = document.getElementById("toolbar").checked;  
+            var location = document.getElementById("location").checked;
+            var menubar = document.getElementById("menubar").checked;
+            var scrollbars = document.getElementById("scrollbars").checked;  
+            var resizable = document.getElementById("resizable").checked
+            window.open(url, "myWindow", "width="+width+",height="+height+",toolbar="+toolbar+",location="+location+",menubar="+menubar+",scrollbars="+scrollbars+",resizable="+resizable)
+
+        }
+        function clearParam(){
+            document.getElementById("toolbar").checked = false;
+            document.getElementById("location").checked = false;
+            document.getElementById("menubar").checked = false;
+            document.getElementById("scrollbars").checked = false;
+            document.getElementById("resizable").checked = false;
+            document.getElementById("inputwidth").value = ""
+            document.getElementById("inputheight").value = ""
+            document.getElementById("inputurl").value = "" 
+
+
+        }
+    </script>
+
+    
+</body>
+</html>

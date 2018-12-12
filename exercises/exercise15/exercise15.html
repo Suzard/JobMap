@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>exercise15</title>
+</head>
+<body style='background-color:honeydew'>
+    <script>
+        var url1 = new URL("youtube", "https://www.youtube.com/")
+        var url2 = new URL("MyAnimeList", "https://myanimelist.net/")
+        var url3 = new URL("WordCounter", "https://wordcounter.net/")
+        var url4 = new URL("LinkedIn", "https://www.linkedin.com/feed/?trk=")
+        var url5 = new URL("MSN", "https://www.msn.com/")
+
+        var url_array = []
+        url_array.push(url1)
+        url_array.push(url2)
+        url_array.push(url3)
+        url_array.push(url4)
+        url_array.push(url5)
+        var color_array = ["red","blue","green","yellow","purple"]
+        function URL(name, url){
+            this.name = name;
+            this.url = url;
+        }
+        function Display(){
+            console.log("success")
+        }
+        function change_text(){
+            var date = new Date();
+            var index = date.getMinutes()%5
+            document.getElementById("url").innerHTML = url_array[index].name;
+            document.getElementById("url").href = url_array[index].url
+            var color = color_array[index]
+            document.getElementById("url").setAttribute("style", "color:"+color+"; border: 1px solid blue;");
+            // document.getElementById("url").setAttribute('href',url_array[index].url);
+
+        }
+        
+        function checkMinute()
+        {
+            var now = new Date();
+
+            if(now.getSeconds() == 0){
+                change_text()
+            }
+            
+        }
+
+        setInterval(checkMinute, 1000);
+        
+
+        
+    </script>
+    <div style="text-align:center">
+    <h1>Click on the Link to see a website</h1>
+    <a id = "url" href="https://youtube.com">Youtube</a>
+    <br>
+    <img src = "job.jpg">
+    </div>
+</body>
+
+</html>

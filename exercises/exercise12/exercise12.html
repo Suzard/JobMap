@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>exercise12</title>
+</head>
+<body style='background-color:yellow'>
+    <img src = "xkcd-regex.jpg">
+    <h1 id = "content">Welcome to regex finder</h1>
+    <script>     
+            function insertbr(NewP){
+                var br = document.createElement("br");
+                NewP.appendChild(br);
+            }   
+            function test_regex(regex, NewP){
+                result1 = regex.test(value2);
+                if(result1 == true){
+                textnode =  document.createTextNode("It's a match")
+                }
+                else{
+                textnode =  document.createTextNode("No match")
+                }
+                NewP.appendChild(textnode)
+            }
+            function input2(){
+            value2 = "" 
+            value2 =  prompt("Enter a text(stop to exit)", "stop")
+            
+            var value_is = "The text is " + value2;
+            var textnode = document.createTextNode(value_is)
+            var NewP = document.createElement("h1");
+            insertbr(NewP)
+            NewP.appendChild(textnode);
+            insertbr(NewP)
+            insertbr(NewP)
+            var least_one = "Match a string that contains at least one character in A-Z, a-z, 0-9, and_"
+            insertbr(NewP)
+            textnode =  document.createTextNode(least_one)
+            NewP.appendChild(textnode)
+    
+            var reg_exp1 = /[a-zA-Z0-9\_]/;
+            insertbr(NewP)
+            test_regex(reg_exp1, NewP)
+            var answer_indent2 = document.createElement("br");
+            NewP.appendChild(answer_indent2);
+            insertbr(NewP)
+            var no_numbers = "\nMatch a string that does not contain a number between 0 and 9"
+            insertbr(NewP)
+            textnode =  document.createTextNode(no_numbers)
+            NewP.appendChild(textnode)
+            insertbr(NewP)
+            var reg_exp2 = /(^[0-9]{2,}|[^0-9]+)/;
+            test_regex(reg_exp2, NewP)
+            insertbr(NewP)
+            insertbr(NewP)
+            var uplow_Space = "Search for an uppercase letter, followed by one or more lowercase letters, followed by a space."
+            insertbr(NewP)
+            textnode =  document.createTextNode(uplow_Space)
+            NewP.appendChild(textnode)
+            document.body.appendChild(NewP)
+            insertbr(NewP)
+            var reg_exp3 =/[A-Z][a-z]\s/;
+            test_regex(reg_exp3, NewP)
+            insertbr(NewP)
+            insertbr(NewP)
+            var pound = "Find a #sign, followed by exactly 5 repeating digits, a period, and another digit"
+            insertbr(NewP)
+            textnode =  document.createTextNode(pound)
+            NewP.appendChild(textnode)
+            document.body.appendChild(NewP)
+            var reg_exp4 =/#\d\d\d\d\d\.\d/;
+            insertbr(NewP)
+            test_regex(reg_exp4, NewP)
+            if(value2 != "stop")
+                window.setTimeout(input2, 1000)
+            
+        }
+
+        window.setTimeout(input2, 1000)
+        
+    </script>
+</body>
+</html>

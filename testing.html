@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body onload="shuffleQuote()">
+    <script>
+        var x = 3
+        console.log(x.toString())
+        var quotes = []
+        var quote1 = "Those who dare to fail miserably can achieve greatly - John F. Kennedy"
+        var quote2= "The first step toward success is taken when you refuse to be a captive of the environment in which you first find yourself - Mark Caine"
+        var quote3= "Twenty years from now you will be more disappointed by the things that you didn’t do than by the ones you did do - Mark Twain"
+        var quote4= "When I dare to be powerful – to use my strength in the service of my vision, then it becomes less and less important whether I am afraid - Audre Lorde";
+        var quote5= "A successful man is one who can lay a firm foundation with the bricks others have thrown at him - David Brinkley";
+        quotes.push(quote1)
+        quotes.push(quote2)
+        quotes.push(quote3)
+        quotes.push(quote4)
+        quotes.push(quote5)
+        function daysInMonth (month, year) {
+            var date = new Date(year, month, 0) 
+            return date.getDate();
+        }
+        function firstDay (month, year) {
+            var date = new Date(year, month) 
+            return date.getDay();
+        }
+        var now = new Date();
+        function createCalendar(){
+            var now = new Date();
+            var hours = now.getHours()
+            
+            var days = daysInMonth(now.getMonth()+1, now.getFullYear())
+            var firstday = firstDay(now.getMonth(), now.getFullYear())
+            var highlight = now.getDate()
+            console.log("november" +days)
+            console.log("first" +firstday)
+            //for i in range(1,)
+            var i;
+            
+            document.write("<table style='width:100%'>")
+            document.write("<th>Sunday</th>");
+            document.write("<th>Monday</th>");
+            document.write("<th>Tuesday</th>");
+            document.write("<th>Wednesday</th>");
+            document.write("<th>Thursday</th>");
+            document.write("<th>Friday</th>");
+            document.write("<th>Saturday</th>");
+            var count = 0
+            var day_count = 1
+
+            for (i = 0; i < 35; i++) { 
+                if(count == 0){
+                    document.write("<tr>")
+                }
+                document.write("<td style='text-align:center'>")
+                if(i >firstday-1 && day_count <= days){
+                    if(day_count == highlight){
+                        console.log("gay")
+                        document.write("<span style ='background-color: #FFFF00'>"+day_count+"</span>")
+                    }
+                    else
+                        document.write(day_count)
+                    day_count += 1
+                }
+                document.write("</td>")
+                if(count == 6){
+                    document.write("</tr>");
+                    count = 0
+                    continue
+                }
+                count += 1
+            }
+            document.write("</table>");
+
+        }
+        createCalendar()
+        console.log(now.getMonth())
+        console.log(now.getDay())
+        console.log(now.getDate())
+        function shuffleQuote(){
+            
+            var index = Math.floor(Math.random() * (quotes.length));
+            
+            document.getElementById("quote").innerHTML = quotes[index]
+        }
+
+
+        function checkMinute()
+        {
+            var now = new Date();
+            var hours = now.getHours()
+            if(hours >= 6 && hours < 12){
+                document.getElementById("greeting").innerHTML = "Good Morning"
+                document.body.style.backgroundColor = "red";
+
+            }
+            else if (hours >= 12 && hours < 18){
+                document.getElementById("greeting").innerHTML = "Good Afternoon"
+                document.body.style.backgroundColor = "peachpuff";
+            }
+            else if (hours >= 18 && hours < 24){
+                document.getElementById("greeting").innerHTML = "Good Evening"
+                document.body.style.backgroundColor = "green";
+            }
+            else {//0-6
+                document.getElementById("greeting").innerHTML = "What are you doing that early?"
+                document.body.style.backgroundColor = "yellow";
+            }
+            document.getElementById("clock").innerHTML = now
+            var string  = "df"
+
+            
+        }
+
+        setInterval(checkMinute, 1000);
+    </script>
+    <h1 id = "clock">Clock</h1>
+    <h1 id = "greeting">Greetings</h1>
+    <h1 id ="quote">Get busy living or get busy dying - Stephen King</h1>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>exercise19</title>
+    <script type="text/javascript">
+        function changeImage(image, text){
+            var imgOver1 = new Image(500,500);
+            imgOver1.src = image
+            document.images[0].src= imgOver1.src
+            document.getElementById("title").innerHTML = text
+            return
+        }
+        if (parseInt(navigator.appVersion) > 2) {
+           var imgOver = new Image(500,500);
+           var imgOver1 = new Image(500,500);
+           var imgOut = new Image(500,500);
+           var imgOver2 = new Image(500,500);
+           imgOver1.src = "Batman2.jpg"
+           imgOver2.src = "batman1.jpg"
+           imgOver.src = "Batman3.jpg";
+           imgOut.src = "Batman.jpeg";
+        }
+          </script>
+
+</head>
+<body style="background-color:green; text-align: center">
+    <div>
+    <h1 style="background-color:red;">BatLIST</h1>
+    <p id = "title">
+    Find out which movie you like the most!
+    </p>
+    <img name="icon"
+           src="cover.jpg" width=500 height=500>
+    <p>
+        <a href="javascript:void(0)"
+            onMouseOver = "changeImage('Batman2.jpg', 'Batman Returns')"
+            onMouseOut = "changeImage('cover.jpg', 'Find out which movie you like the most!')">Best Movie</a>
+    </p>
+    <p>
+        <a href="javascript:void(0)"
+           onMouseOver = "changeImage('Batman3.jpg', 'Dark Knight Rises')"
+           onMouseOut = "changeImage('cover.jpg', 'Find out which movie you like the most!')">Second Best Movie</a>
+    </p>
+    <p>
+        <a href="javascript:void(0)"
+           onMouseOver =  "changeImage('batman1.jpg', 'Batman Forever')"
+           onMouseOut = "changeImage('cover.jpg', 'Find out which movie you like the most!')">Third Best Movie</a>
+    </p>
+
+    </div>
+</body>
+</html>

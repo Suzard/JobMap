@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>exercise13</title>
+</head>
+<body style='background-color:yellow'>
+    <h1 style = "text-align:center; color:red">Let's get the party started!</h1>
+    <h2 style = "text-align:center; color:peachpuff">Background-color is randomly generated</h2>
+    <script>    
+    var hexa = ""
+    function calculate_color(){
+        var random_value = Math.floor(Math.random() * (256 - 0) + 0)
+        if(random_value.toString().length <2 ){
+            random_value =random_value.toString() + "0"
+            random_value = parseInt(random_value)
+            
+        }
+
+        random_value = random_value.toString(16)
+        return random_value
+    }
+    function change_color(){
+        var red = calculate_color();
+        var green = calculate_color();
+        var blue = calculate_color();
+        hexa = "#" + red+green+blue;
+        document.body.style.backgroundColor = hexa;
+        document.getElementById("RGB").textContent = "RGB form is " + document.body.style.backgroundColor;
+        document.getElementById("HEX").textContent = "Hexadecimal form is " + hexa;
+        
+    }
+   
+    </script>
+    <h2 onclick = "change_color()" style = 'text-align:center; color: blue;'>Click to change color</h2>
+    <h2 id = "RGB" style = 'text-align:center; color: green;'>RGB form is rgb(255,255,0)</h2>
+    <h2 id = "HEX" style = 'text-align:center; color: black;'>Hexadecimal form is #ffff00</h2>
+    <div style="text-align:center">
+    <img src = "disco.gif">
+    </div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>exercise10</title>
+    <link rel="stylesheet" href="exercise10.css"><!--for css files-->
+
+</head>
+<body>
+    <div id = "content" style = 'background-color:yellow' class = "original_content">
+        <h3>I love watching movies</h3>
+        <p>This is one of my favorites.</p>
+    </div>
+    <script>
+        var value;
+        function input2(){
+            value2 =  prompt("One of my favorites", "The Dark Knight")
+            var textnode = document.createTextNode(value2)
+            var NewP = document.createElement("h1");
+            
+            NewP.appendChild(textnode);
+            document.body.appendChild(NewP)
+            var Newtext = document.createElement("p");
+            var line_break = document.createElement("br")
+            Newtext.setAttribute("href","javascript: document.write(\"hi\")");
+            textnode = document.createTextNode("Prepare for the darkness!")
+            Newtext.setAttribute("class", "original_content")
+            Newtext.appendChild(textnode)
+            Newtext.appendChild(line_break)
+            var Movie = document.createElement("div");
+            var elem = document.createElement("img");
+            elem.src = 'Batman.jpeg';
+            Newtext.appendChild(elem)
+            document.body.appendChild(Newtext)
+            
+
+            //NewP.setAttribute("class", "original_content")
+            
+        }
+        function input(){
+            value =  prompt("What movie do you like?")
+            var test = document.getElementById('content');
+            var NewP = document.createElement("div");
+            NewP.setAttribute("class","original_content")
+            var textnode = document.createTextNode( value+ " is a good movie")
+            NewP.appendChild(textnode);
+            //test.parentNode.insertBefore(test, textnode)
+            test.parentNode.insertBefore(NewP, test)
+            //document.write(test.parentNode.nodeName)
+            window.setTimeout(input2, 1000)
+
+        }
+
+        window.setTimeout(input, 1000)
+        
+
+
+    </script>
+</body>
+</html>

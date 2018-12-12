@@ -10,6 +10,22 @@
     <link rel="stylesheet" href="./css/format.css"><!--for css files-->
 </head><!--Keeps other html tags-->
 <body>
+    <div id = "movable" style="background-color: peachpuff; ">
+        <h1 style = "color: blue;">This is what's new today</h1>
+        <img style="vertical-align:middle" src = "img/new.jpg">
+    </div>
+    <script type="text/javascript">
+            function moveDiv(x, y) {
+                var movable = document.getElementById('movable');
+                movable.style.position = "absolute";
+                movable.style.left = x+'px';
+                movable.style.top = y+'px';
+            }
+            document.body.addEventListener("click", function (event) {
+            moveDiv(event.clientX, event.clientY);
+
+});
+    </script>
     <header>
         <!--id is for something that is unique ex: showcase area vs class used everywhere-->
         <div class="container">  <!--useful for adding padding to a header-->
@@ -26,6 +42,8 @@
                     <li><a href= "service.html">Customer Service</a></li>
                     <li><a href= "product_information.html">Product Information</a></li>
                     <li><a href= "catalogue.html">Catalogue</a></li>
+                    <li><a href= "employment.html">Employment</a></li>
+                    <li><a href= "order.html">Order</a></li>
                 </ul>
             </nav>
         </div>

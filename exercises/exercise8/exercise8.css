@@ -1,0 +1,26 @@
+#bg{
+    position: absolute;  /*makes image stretch to full screen*/
+    top: 0; 
+    left: 0; 
+      
+    /* Preserve aspect ratio */
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1; /*makes text able to take priority over image*/
+}
+#window{
+    color: purple;
+    text-align: center;
+    font-style: italic;
+}
+p{
+    font-size: 30px;
+    text-align: center;
+    color: blue;
+
+}
+a{
+    font-size: 50px;
+    text-align: center;
+    color: blue;
+}

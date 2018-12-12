@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>exercise21</title>
+    <script src="http://ajax.googleapis.com/ajax/
+libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body style ="text-align:center; background-color: yellow">
+    <h1>Question Time!</h1>
+    <ul id="menu">
+            <li id = "q1">Question 1 (click for answer)</li>
+                <ul id="submenu" style ="text-align: center;font-size: 50px">
+                    <p class = "q1a" style="visibility:hidden">The answer to question 1 is 11</p>
+                </ul>
+            
+                <li id = "q2">Question 2 (click for answer)</li>
+                <ul id="submenu" style ="text-align: center;font-size: 50px">
+                    <p class = "q2a" style="visibility:hidden">The answer to question 2 is 22</p>
+                </ul>
+            
+                <li id = "q3">Question 3 (click for answer)</li>
+                <ul id="submenu" style ="text-align: center;font-size: 50px">
+                    <p class = "q3a" style="visibility:hidden">The answer to question 3 is 33</p>
+                </ul>
+            
+            <script type="text/javascript">
+            function showAnswer(class_variable){
+                document.getElementsByClassName(class_variable)[0].style.visibility = "visible"
+                document.getElementsByClassName(class_variable)[0].style.cursor = "pointer";
+
+            }
+            function hideAnswer(class_variable){
+                document.getElementsByClassName(class_variable)[0].style.visibility = "hidden"
+            }
+            $("#q1").click(function(){
+                if ( $('.q1a').css('visibility') == 'hidden' )
+                    showAnswer("q1a")
+                else
+                    hideAnswer("q1a")
+              });
+            $("#q2").click(function(){
+            if ( $('.q2a').css('visibility') == 'hidden' )
+                showAnswer("q2a")
+            else
+                hideAnswer("q2a")
+            });
+            $("#q3").click(function(){
+            if ( $('.q3a').css('visibility') == 'hidden' )
+                showAnswer("q3a")
+            else
+                hideAnswer("q3a")
+            });
+            </script>
+</body>
+</html>

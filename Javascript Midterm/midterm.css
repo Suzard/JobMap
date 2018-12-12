@@ -1,0 +1,22 @@
+/* 
+middle portion
+*/
+#advertisement{
+    min-height:400px;
+    background:url('clown.gif');
+    background-repeat:   no-repeat;
+    background-position: center center; 
+    text-align:center;
+    background-color: peachpuff;
+}
+#advertisement2{
+    min-height:400px;
+    background:url('clown.gif');
+    background-repeat:   no-repeat;
+    background-position: center center; 
+    text-align:center;
+    background-color: peachpuff;
+}
+p{
+    color: blue;
+}

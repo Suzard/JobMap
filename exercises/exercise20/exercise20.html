@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>exercise20</title>
+</head>
+<script src="http://ajax.googleapis.com/ajax/
+libs/jquery/1.10.2/jquery.min.js"></script>
+
+<body style ="text-align: center; background-color:red">
+    <h1>Do you like Batman Movies? </h1>
+    
+            <select size = "3" id='select1'>
+                <option value="Movie">Movie</option>
+                <option value="Batman">Batman</option>
+                <option value="Batman2">Batman2</option>
+        </select>
+            
+            <select  size = "4" id='select2'>Images
+                <option id = "-1" disabled = "true" value="Images">Images</option>
+                <option id = 0 value="Batman">Moviea</option>
+                <option id = 1  value="Batman">Movieb</option>
+                <option id = 2  value="Batman">Moviec</option>
+                <option id = 3  value="Batman2">Movied</option>
+                <option id = 4  value="Batman2">Moviee</option>
+                <option id = 5  value="Batman2">Movief</option>
+            </select>
+        <script>
+
+        var movies = ["Batman.jpeg", "batman1.jpg", "Batman2.jpg", "Batman3.jpg", "Batman4.jpg", "Batman5.jpg"]
+        
+        $('#select2 option[value="'+"Images"+'"]').attr("disabled", true);
+        $("#select2").change(function(){
+            var id = $(this).children(":selected").attr("id");
+            return $("#myiframe").attr("src", movies[id]);
+        });
+        $("#select1").change(function() {
+            
+        if ($(this).data('options') === undefined) {
+            $(this).data('options', $('#select2 option').clone());
+        }
+
+        var id = $(this).val();
+        var options = $(this).data('options').filter(function() {  
+        return $(this).attr("value") === id || $(this).attr("value") === "Images";
+        });
+        $('#select2').html(options);
+        });
+        $("#select1").change(function() {
+        });
+        </script>
+        <p>
+        <div style="position:relative; text-align:center; width:50%; height:50%; padding-bottom:56.25%; padding-left:80%;">
+            <iframe id ="myiframe" style="position:absolute; left:0; top:0; width:100%; height:100%"
+                src="cover.jpg">
+            </iframe>
+        </div>
+        </p>
+</body>
+</html>

@@ -1,0 +1,12 @@
+#content{
+    background-color:yellow;
+    
+}
+.class_content{
+    background-color:green;
+    outline-style: solid;
+    outline-color: brown;
+    outline-width: thick;
+    margin-bottom: 10px;
+    width:50%; height: 100px; padding: 10px; margin: 10px 0
+}

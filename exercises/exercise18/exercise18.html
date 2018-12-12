@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>exercise18</title>
+</head>
+<body onload="javascript:resetCookie()" style= "text-align:center;background-color:green">
+    <h1>Cookie Counter!</h1>
+    <h1 id = "visits">You have visited 1 time(s). Welcome to my page!</h1>
+    <img src = "cookie.gif">
+    <br>
+    <button onclick="incrementCounter()">Revisit Page</button>
+    <button onclick="resetCookie1()">Reset Counter</button>
+    <script>
+        var visits;
+        var messages = ["Welcome to my page!","Bonjour!", "Hola!", "Ciao!", "Ola!","Hallo!", "What's going on?", "How are you doing?", "Are you ok?", "What's up!", "Yo!"];
+        
+        
+        function resetCookie(){
+            // 
+            deleteAllCookies()
+            
+        }
+        function resetCookie1(){
+            // document.getElementById("visits").textContent = 
+            console.log(document.cookie)
+            deleteCookie("visits")
+            createCookie("visits",1)
+            console.log(document.cookie)
+            var visits =  parseInt(document.cookie.split(";")[0].split("=")[1]);    
+            
+            document.getElementById("visits").textContent = "You have visited " +(visits)+ " time(s). "+ messages[visits]
+        }
+        function createCookie(name,value,days) {
+            console.log("ji")
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime()+(days*24*60*60*1000));
+                var expires = "; expires="+date.toGMTString();
+            }
+            else var expires = "";
+                document.cookie = name+"="+value+expires+"; path=/";
+        }
+        function deleteCookie(name) {
+            createCookie(name,"",-1);
+            }
+        function deleteAllCookies(){
+            var cookies = document.cookie.split(";");
+            for (var i = 0; i < cookies.length; i++)
+                deleteCookie(cookies[i].split("=")[0]);
+        }
+        function incrementCounter(){
+            
+            if(!document.cookie){
+                createCookie("visits", 2)
+                console.log(document.cookie)
+                var visits =  parseInt(document.cookie.split(";")[0].split("=")[1]);    
+                document.getElementById("visits").textContent = "You have visited " +(visits)+ " time(s). "+ messages[visits]
+
+                return;
+            }
+            else{
+            console.log(document.cookie)
+            var visits =  parseInt(document.cookie.split(";")[0].split("=")[1]) +1;            
+            console.log(visits,"s")
+            if(visits >10)
+                visits = 1;
+            createCookie("visits", visits)
+            
+            var visits =  parseInt(document.cookie.split(";")[0].split("=")[1]);    
+            
+            document.getElementById("visits").textContent = "You have visited " +visits + " time(s). "+ messages[visits]
+            
+            // deleteCookie("visits")
+            }
+        }
+    </script>
+</body>
+</html>

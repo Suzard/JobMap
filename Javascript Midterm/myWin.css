@@ -1,0 +1,12 @@
+#advertisement{
+    /* needed to get image to fit to div */
+    /* background:url('balance.gif'); */
+    position: absolute;  /*makes image stretch to full screen*/
+    top: 0; 
+    left: 0; 
+      
+    /* Preserve aspect ratio */
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1; /*makes text able to take priority over image*/
+}

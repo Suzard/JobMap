@@ -1,0 +1,88 @@
+class Solution:
+    def romanHelper(self, num):
+        d = {
+               1:'I'          ,
+               2:'II'          ,
+               3:'III'          ,
+               4:'IV'          ,
+               5:'V'          ,
+               6:'I'          ,
+               7:'VII'          ,
+               8:'VIII'          ,
+               9:'IX'          ,
+              10:'X'           ,
+              50:'L'           ,
+             100:'C'            ,
+             500:'D'            ,
+            1000:'M'             
+            
+        }
+        sNum = str(num)
+        value = len(sNum)
+        if num in d:
+            return d[num]
+        else:
+            if(num[0] == '4' or num[0] == '9'):
+                pass
+            else:
+                #MMM
+                return num[0]*int("1"+value*"0")
+        
+        # if 9 in front or 4 in front, doubly char, i.e. xc, iv
+        # 1000 -> M
+        # 300 -> CCC
+        # 500 -> D
+        # 800 -> D
+        #
+            
+    def intToRoman(self, num):
+        """
+        :type num: int
+        :rtype: str
+        """
+        length = len(str(num))
+        divider = 1
+        j = []
+        while(length != 0):
+            diff = num % 10
+            print(diff)
+            value = str(diff*divider)
+            j = [value] +j
+            print(self.romanHelper(value))
+            num = int(num/10)
+            length -= 1 
+            divider*=10
+        print(j)
+        return ''.join(j)
+j = Solution()
+j.intToRoman(1994)
+        
+        # for i in value[1:]:
+#use my beautiful romantoint function to convert the easy modulo of every value
+#1994
+#1994 modulo 10 = 4
+#1994 modulo 100 = 94 -previous module
+#1994 modulo 1000 = 9000 -previous modulo
+# Output: "III"
+# Example 2:
+
+# Input: 4
+# Output: "IV"
+# Example 3:
+#1 +5, 5 is bigger than 1. So we subtract the previous value twice 1*2
+
+# Input: 9
+# Output: "IX"
+# Example 4: 1 + 10 -1. 10 > 1 So we subtract previous value twice 1*2 = 9
+
+# Input: 58
+# Output: "LVIII"
+# Explanation: L = 50, V = 5, III = 3.
+# Example 5: 50 + 5+ 1+1+1
+
+# Input: 1994
+# Output: "MCMXCIV"
+# Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
+#  1000 + 100 +1000 - 200  + 10 + 100 -20  + 1 +5 -2 
+
+        

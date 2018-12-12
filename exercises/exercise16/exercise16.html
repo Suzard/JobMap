@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>exercise16</title>
+</head>
+<body style="background-color:yellowgreen">
+    <div style="text-align:center">
+    <h1>My Calculator</h1>
+    </div>
+    <form style = "text-align:center" action="/action_page.php">
+        Calculator value: <input id = "input" type="text" name="fname"><br>
+    </form>
+    <table style="width:100%;text-align: center">
+        
+        <tr>
+            <th></th>
+            <th></th> 
+            <th></th>
+            <th></th>
+        </tr>
+        <tr>
+            <td><button onclick="getInput(1)">1</button></td>
+            <td><button onclick="getInput(4)">4</button></td>
+            <td><button onclick="getInput(7)">7</button></td>
+            <td><button onclick="clearInput()">C</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="getInput(2)">2</button></td>
+            <td><button onclick="getInput(5)">5</button></td>
+            <td><button onclick="getInput(8)">8</button></td>
+            <td><button onclick="getInput(0)">0</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="getInput(3)">3</button></td>
+            <td><button onclick="getInput(6)">6</button></td>
+            <td><button onclick="getInput(9)">9</button></td>
+            <td><button onclick="callEval()">=</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="getInput('+')">+</button></td>
+            <td><button onclick="getInput('-')">-</button></td>
+            <td><button onclick="getInput('*')">x</button></td>
+            <td><button onclick="getInput('/')">/</button></td>
+        </tr>
+        
+        
+
+</table>
+    <script>
+        var clear = false
+        function getInput(val){
+            if(clear){
+                document.getElementById("input").value = val.toString()
+                clear = false
+            }
+            else
+                document.getElementById("input").value += val.toString()
+
+        }
+        function clearInput(){
+            document.getElementById("input").value = ""
+        }
+        function callEval(){
+            try {
+            document.getElementById("input").value  = eval(document.getElementById("input").value);
+            }
+            catch(e){
+                document.getElementById("input").value = "Invalid expression"
+            }
+            clear = true
+        }
+    </script>
+    <div style="text-align:center">
+    <img src = "calculating.gif">
+    </div>
+</body>
+</html>

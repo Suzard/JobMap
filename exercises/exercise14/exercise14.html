@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>exercise14</title>
+</head>
+<body style='background-color:yellowgreen'>
+    <script>
+        var convert_month = new Array();
+        convert_month[0] = "January";
+        convert_month[1] = "February";
+        convert_month[2] = "March";
+        convert_month[3] = "April";
+        convert_month[4] = "May";
+        convert_month[5] = "June";
+        convert_month[6] = "July";
+        convert_month[7] = "August";
+        convert_month[8] = "September";
+        convert_month[9] = "October";
+        convert_month[10] = "November";
+        convert_month[11] = "December";
+        var month = prompt("What month were you born in?") -1
+        var day = prompt("What day were you born in?")
+        var year = prompt("What year were you born in?")
+        document.write("<div style='text-align:center'>")
+        document.write("<h1>My Age</h1>")
+        var current_date = new Date()
+        document.write("<p>"+"Today is " + current_date+"</p>")
+        var date = new Date(year,month, day)
+        var diff_date = current_date-date;
+        var age = Math.floor(diff_date/31536000000);
+        var oneDay = 24*60*60*1000;
+        var diffDays = Math.round(Math.abs((current_date.getTime() - date.getTime())/(oneDay)))-1;
+        var diffHours = Math.floor(current_date.getHours()- date.getHours());
+        var diffMinutes = current_date.getMinutes()- date.getMinutes();
+        var diffSeconds = current_date.getSeconds()- date.getSeconds();
+
+        var nextBday = new Date(current_date.getFullYear(),month,day)
+        if(nextBday.getTime() < current_date.getTime()){
+            nextBday.setFullYear(nextBday.getFullYear()+1);
+        }
+        var diff = nextBday.getTime()-current_date.getTime();
+        var days = Math.floor(diff/(1000*60*60*24));
+        var roughHours = diffHours;
+        if(diffMinutes == 0 && diffSeconds == 0){
+            roughHours += 1
+        }
+        var roughMinutes= diffMinutes;
+        if(diffMinutes != 60 || diffSeconds == 0){
+            roughMinutes += 1
+        }
+        document.write("<p>I was born on "+convert_month[date.getMonth()]+ " " + date.getDate() + ", " + date.getFullYear() +". (" +(date.getMonth()+1)+"/"+date.getDate()+"/"+date.getFullYear()+")"+"</p>")
+        document.write("I am "+ age+ " years old, and will turn "+(age+1) + " in: "+days+ " days, \
+        "+(23-roughHours)+ " hours, " + (60-roughMinutes)+" minutes, " + (60-diffSeconds) +" seconds")
+        document.write("<br>");
+        document.write("I have been alive for "+diffDays+ " days, \
+        "+diffHours+ " hours," + diffMinutes +" minutes, " + diffSeconds +" seconds")
+        
+    </script>
+    <div style="text-align:center">
+    <img src = "birthday.gif">
+    </div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Edward Chen midterm</title>
+    <link rel="stylesheet" href="midterm.css"><!--for css files-->
+</head>
+<body>
+    <section id="advertisement">
+            <div class="container">
+                <h1>Welcome!</h1>
+                <p>Have fun booking your cruise!</p>
+            </div>
+    </section>
+    <script type="text/javascript">
+        var myWin = window.open("", "myWin", "height=500,width=1000,toolbar,status,resizable");
+        myWin.focus();
+        function Cruise(date, cruise_destination, cruise_description, cruise_url, ship_name, ship_description, ship_url,price){
+            this.date = date;
+            this.cruise_destination = cruise_destination;
+            this.cruise_description = cruise_description;
+            this.cruise_url = cruise_url;
+            this.ship_name = ship_name;
+            this.ship_description = ship_description
+            this.ship_url = ship_url 
+            this.price = price
+        }
+        function printArray(arr){
+                    document.write("<br>")
+                    document.write("<td>");
+                    document.write(arr["date"])
+                    document.write("</td>");
+                    document.write("<td>");
+                    document.write("<a href='javascript:myWin.removeElementsByClass(\"deleteable\"); \
+                    myWin.loadDesc(\""+ arr["cruise_description"] + "\",\""+ arr["cruise_url"] +"\");\
+                    '>"+arr["cruise_destination"]+"</a>")                    //document.write("<a href='javascript: myWin.document.write(\'dog\');'>"+arr["cruise_destination"]+"</a>")
+                    document.write("</td>");
+                    document.write("<td>");
+                    //need the quotation marks because otherwise there is no variable arr["ship_name"] in myWin
+                    document.write("<a href='javascript:myWin.removeElementsByClass(\"deleteable\"); \
+                    myWin.loadDesc(\""+ arr["ship_description"] + "\",\""+ arr["ship_url"] +"\");\
+                    '>"+arr["ship_name"]+"</a>")
+                    document.write("</td>");
+                    document.write("<td>");
+                    document.write(arr["price"])
+                    document.write("</td>");
+                }
+        function displayList(dog){
+            var cruise_description = "You’ll feel like a king or queen when you’re onboard Royal Caribbean’s Majesty of the Seas. This well appointed ship offers cruisers a chance to have a true vacation. You can spend your mornings lounging on the sun deck or being active in the state-of-the-art fitness center, which also offers yoga and tai chi classes. At night, get your dancing shoes on as you bounce from lounge to lounge until you crash into your comfy bed. And if you find yourself too tired to get up for breakfast, just order room service. Be sure to check out the Vitality Spa and the Casino Royale for some great Majesty of the Seas experiences."
+            var cruise_description2 = "A Carnival Inspiration Interior Upper/Lower stateroom creatively maximizes space for a pair of cruisers. These staterooms feature all the same amenities as other Interior staterooms, with a different layout — including one Twin bed, and either an upper Pullman or sofa bed. They also feature linens from the Carnival Comfort Collection, a full private bathroom and more."
+            var cruise_description3 = "Experience a unique blend of cultures, postcard-worthy beaches and welcoming weather throughout the Caribbean, and enjoy leisure time on Disney’s private Bahamian island, Castaway Cay. Days at sea aboard your magnificent Disney ocean liner are a delight unto themselves: Dive into fun daily activities, live entertainment, Character experiences and themed dining only Disney could dream up!"
+            var ship_description = "MS Majesty of the Seas. This is not a tourist trap. This is authenticity everywhere you look — exploring the culture, cuisine and artistry of Havana, Cuba"
+            var ship_description2 = "Carnival Inspiration (formerly Inspiration) is a Fantasy-class cruise ship operated by Carnival Cruise Line. Built by Kværner Masa-Yards at its Helsinki New Shipyard in Helsinki, Finland, she was floated out on April 1, 1996, and christened as Inspiration by Mary Anne Shula.[5] During 2007, in common with all of her Fantasy-class sisters, she had the prefix Carnival added to her name"
+            var ship_description3 = "Disney Fantasy is a cruise ship owned and operated by Disney Cruise Line, part of The Walt Disney Company, which entered service in 2012. The Disney Fantasy currently sails seven-night Eastern or Western Caribbean cruises. Her sister ship, Disney Dream, was launched in 2011. Disney Fantasy is the fourth ship in the cruise line, the other two ships being the Disney Magic and the Disney Wonder."
+            var cruise_url = "https://cruiseweb.com/cruise-lines/royal-caribbean-international/ship-majesty-of-the-seas"
+            var cruise_url2 = "https://www.carnival.com/itinerary/3-day-baja-mexico-cruise/los-angeles/inspiration/3-days/laj"
+            var cruise_url3 = "https://disneycruise.disney.go.com/cruises-destinations/itineraries/caribbean/"
+            var ship_url = "https://en.wikipedia.org/wiki/MS_Majesty_of_the_Seas"
+            var ship_url2 = "https://en.wikipedia.org/wiki/Carnival_Inspiration"
+            var ship_url3 = "https://en.wikipedia.org/wiki/Disney_Fantasy"
+            //var cruise1 = new Cruise("16 Mar 2018","3 Night Bahamas Cruise",cruise_description,cruise_url,"Majesty of the Seas",ship_description,ship_url,"$169")
+            var cruise1 = new Cruise("5 April 2018","3 Night Bahamas Cruise",cruise_description2,cruise_url2,"Majesty of the Seas",ship_description,ship_url,"$259")
+            var cruise2 = new Cruise("5 April 2018","3 Day Baja Mexico from Los Angeles CA",cruise_description2,cruise_url2,"Carnival Inspiration",ship_description2,ship_url2,"$259")
+            var cruise3 = new Cruise("3 May 2018","7-Night Eastern Carribean",cruise_description3,cruise_url3,"Disney Fantasy",ship_description3,ship_url3,"$1715")
+            var total_array = []
+            total_array.push(cruise3)
+            total_array.push(cruise2)
+            total_array.push(cruise1)
+            document.write("<table class = \"deleteable\">")
+            document.write("<th>Departs</th>");
+            document.write("<th>Destination</th>");
+            document.write("<th>Ship</th>");
+            document.write("<th>Price from</th>");
+            document.write("<tr>");
+            printArray(total_array.pop());
+            document.write("</tr>");
+            document.write("<tr>");
+            printArray(total_array.pop());
+            document.write("</tr>");
+            document.write("<tr>");
+            printArray(total_array.pop());
+            document.write("</tr>");
+            document.write("<section id = \"advertisement\" class = \"deleteable\">\
+            <div class = \"container\">\
+            <h1>Welcome!</h1>\
+            <p>Have fun booking your cruise!</p>\
+            </div>\
+            </section>");
+        }
+
+        myWin.document.write("<div align='center' class = \"deleteable\">");
+        myWin.document.write("<h1>Cruise... Hot deals</h1>");
+        myWin.document.bgColor = "lightgreen";
+        
+        //WRITING loadURL script for myWin and displayList
+        myWin.document.write('<' + 'script type="text/javascript""' +'">\
+        function loadURL(url){\
+        window.opener.location.href=url;}\
+        function removeElementsByClass(className){\
+        var elements = document.getElementsByClassName(className);\
+        while(elements.length > 0){\
+            elements[0].parentNode.removeChild(elements[0]);\
+        }\
+        }\
+        function loadDesc(description,url){\
+            removeElementsByClass("deleteable");\
+            var paraText = document.createTextNode("click here for more");\
+            var para = document.createElement("a");\
+            para.setAttribute("class", "deleteable");\
+            para.appendChild(paraText);\
+            paraDesc = document.createTextNode(description);\
+            var paraP = document.createElement("p");\
+            var paraPText = document.createTextNode(description);\
+            paraP.appendChild(paraPText);\
+            paraP.setAttribute("class", "deleteable");\
+            para.setAttribute("href","javascript: var newWin =window.open(\'"+url+"\',\'newWin\', \'width = 500, height = 500\') ");\
+            document.body.appendChild(paraP);\
+            document.body.appendChild(para);\
+        }\
+        </sc' + 'ript>');
+
+        myWin.document.write("<a href='javascript: window.opener.displayList(\"clown.gif\");'>Display cruises</a>")
+        myWin.document.write("<br>")
+        myWin.document.write("<a href='javascript: loadURL(\"https://cruiseweb.com/cruise-lines/royal-caribbean-international/ship-majesty-of-the-seas\");'>Royal Carribean</a>")
+        myWin.document.write("<br>")
+        myWin.document.write("<a href='javascript: loadURL(\"https://www.carnival.com/itinerary/3-day-baja-mexico-cruise/los-angeles/inspiration/3-days/laj\");'>Carnival</a>")
+        myWin.document.write("<br>")
+        myWin.document.write("<a href='javascript: loadURL(\"https://disneycruise.disney.go.com/cruises-destinations/itineraries/caribbean/\");'>Disney</a>")
+        myWin.document.write("</div>");
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>exercise8</title>
+    <link rel="stylesheet" href="exercise8.css"><!--for css files-->
+
+</head>
+<body>
+        
+
+    <a href='javascript:window.close();'>Click here to close this window</a>
+    <img src= "up.jpg" id ="bg">
+    <script type="text/javascript">
+        function Movie(title, actor){
+                this.title = title;
+                this.actor = actor;
+
+        }
+
+        var title = "Carl Fredricksen, a 78-year-old balloon salesman, is about to fulfill a lifelong dream. Tying thousands of balloons to his house, he flies away to the South American wilderness. But curmudgeonly Carl's worst nightmare comes true when he discovers a little boy named Russell is a stowaway aboard the balloon-powered house. A Pixar animation.";
+        var actor = "Jordan Nagai (born February 5, 2000) is an American former child voice actor best known for his voice role as Russell in Up.";
+        var Up = new Movie(title, actor);
+        var myWin = window.open("", "myWin", "height=1000,width=1500,toolbar,status,resizable");
+        myWin.document.write()
+        myWin.document.write('<!DOCTYPE html><html><head><title>Movie Information</title><link rel="stylesheet" type="text/css" href="exercise8.css"></head>');
+        myWin.document.write("<a href='javascript:window.close();'>Click here to close this window</a>")
+        myWin.document.write('<img src= "up_poster.jpg" id  = "bg">');
+        myWin.document.write('<h1 id = "window" >What about the Movie?</h1>')
+        myWin.document.write("<br>")
+        myWin.document.write("<br>")
+        myWin.document.write("<br>")
+
+        myWin.document.write("<p>"+Up.title+"</p>");
+        myWin.document.write("<a href='javascript: movie_info = window.open(\"https://www.imdb.com/title/tt1049413/\", \"movie_info\", \"height=1000,width=1500,toolbar,status,resizable\");'>Click here to access the Movie Window</a>");
+        myWin.document.write("<br>")
+        myWin.document.write("<a href='javascript: var actor_info = window.open(\"actor.html\", \"actor_info\", \"height=1000,width=1500,toolbar,status,resizable\"); '>Click here to access the actor window</a>")
+        myWin.document.write("<br>")
+        myWin.document.write("<a href='javascript: movie_info.close();'>Click here to close the movie window</a>")
+        myWin.document.write("<br>")
+        myWin.document.write("<a href='javascript: actor_info.close();'>Click here to close the actor window</a>")
+        myWin.document.write('</html>');
+    </script>
+</body>
+</html>

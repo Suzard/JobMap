@@ -1,0 +1,37 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+class Solution:
+    def generate(self, numRows):
+        """
+        :type numRows: int
+        :rtype: List[List[int]]
+        """
+        #generate the first 2 rows
+        #then for the third row
+        #the values in between will be the consecutive sums of the previous row.
+        #beginning row is always just one
+        #second row is always just two
+        #rows after that always have ones at the end
+        #so to solve this
+        #have an array storing the values
+        #append for the subarrays append until it reaches the counter
+        count = 1
+        #for i in range(0,1)
+        #subcount = count
+        #
+        if(numRows <= 0):
+            return []
+        returnA = [[1]]
+        for i in range(1,numRows):
+            prev_value = returnA[-1][0]
+            subarray = [1]
+            for inner in returnA[-1][1:]:#mimght be wrong
+                subarray.append(inner+prev_value)
+                prev_value = inner
+            subarray.append(1)
+            returnA.append(subarray)
+        return returnA
+                
+            
+
+x = Solution()
+print(x.generate(5))

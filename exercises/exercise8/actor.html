@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>actor</title>
+</head>
+<body>
+    <div style="text-align:center;border:1px solid red">
+    <h1>Actors</h1>
+    <script>
+            
+        function Movie(title, actor){
+                this.title = title;
+                this.actor = actor;
+
+        }
+
+        var title = "Carl Fredricksen, a 78-year-old balloon salesman, is about to fulfill a lifelong dream. Tying thousands of balloons to his house, he flies away to the South American wilderness. But curmudgeonly Carl's worst nightmare comes true when he discovers a little boy named Russell is a stowaway aboard the balloon-powered house. A Pixar animation.";
+        var actor = "Jordan Nagai (born February 5, 2000) is an American former child voice actor best known for his voice role as Russell in Up.";
+        var Up = new Movie(title, actor);
+        document.write("<p>"+Up.actor+"</p>")
+        document.write("<a href='javascript: more_actor_info = window.open(\"https://www.imdb.com/name/nm2973712/?ref_=tt_cl_t3\", \"myWin\", \"height=1000,width=1500,toolbar,status,resizable\");'>Click here to access more details about the actor</a>");
+        document.write("<br>")
+        document.write("<a href='javascript: more_actor_info.close();'>Click here to close the additional actor screen (Only if you clicked access more details!)</a>");
+    </script>
+    </div>
+</body>
+</html>

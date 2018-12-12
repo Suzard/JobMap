@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>exercise9</title>
+    <script type="text/javascript">
+        var myWin = window.open('', "myWin", "height=1080,width=1920,toolbar,status,resizable");
+        var height = myWin.screen.height
+        var width  = myWin.screen.width
+        myWin.document.write("<div align='center'>")
+        myWin.document.write("Screen height is "+ height)
+        myWin.document.write('<br>')
+        myWin.document.write("Screen width is " + width)
+        myWin.document.write('<br>')
+        myWin.document.write("<img src = 'surprise.gif'>")
+        myWin.document.write("</div>")
+        function resize_screen(){
+            height = Math.floor(height*1/3)
+            width = Math.floor(width*1/3)
+            myWin.resizeTo(height,width)
+            myWin.document.write("<div align='center'>")
+            myWin.document.write("<img src = 'activated.gif'>")
+            myWin.document.bgColor = "lightyellow";
+	        myWin.document.fgColor = "red";
+            myWin.document.write("<h1>Screen has been resized</h1>")
+            myWin.document.write("Screen height is now "+ height)
+            myWin.document.write('<br>')
+            myWin.document.write("Screen width is now " + width)
+            myWin.document.write('<br>')
+            myWin.document.write("<h1>Navigator details</h1>")
+            myWin.document.write('<br>')
+            myWin.document.write("The appCodeName is: " + myWin.navigator.appCodeName);
+            myWin.document.write('<br>')
+            myWin.document.write("The appName is: " + myWin.navigator.appName);
+            myWin.document.write('<br>')
+            myWin.document.write("The appVersion is: " + myWin.navigator.appVersion);
+            myWin.document.write('<br>')
+            myWin.document.write("The userAgent is: " + myWin.navigator.userAgent);
+            myWin.document.write('<br>')
+            myWin.document.write("The language is: " + myWin.navigator.language);
+            myWin.document.write('<br>')
+            myWin.document.write("The platform is: " + myWin.navigator.platform);
+            myWin.document.write("</div>")
+
+        }
+        myWin.setTimeout(resize_screen, 2000)
+        
+        
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
